@@ -1,0 +1,45 @@
+@import "../css/header.css";
+@import "../css/footer.css";
+@import "../css/hero.css";
+@import "../css/directions.css";
+@import "../css/hotels.css";
+@import "../css/flights.css";
+@import "../css/reservation.css";
+
+:root {
+    --font-main: "Poppins", sans-serif;
+    --font-secondary: "Roboto", sans-serif;
+    --font-logo: "Volkhov", serif;
+    --font-nav: "Open Sans", sans-serif;
+
+    --primary-color: #df6951;    
+    --text-color: #212832;       
+    --text-light: #5e6282;       
+    --bg-light: #fffcf8;         
+    --white: #ffffff;
+    --black: #000000;
+    
+    
+    --btn-border: #212832;
+    --btn-radius: 5px;
+    --transition: 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-nav);
+    color: var(--text-color);
+    background-color: var(--white);
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
