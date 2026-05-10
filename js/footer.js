@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let modalCount = 0;
+
     function setupModal(btnId, modalId) {
         const btn = document.getElementById(btnId);
         const modal = document.getElementById(modalId);
@@ -8,21 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+
                 modal.classList.add('is-open');
-                document.body.classList.add('no-scroll');
+                modalCount++;
+                if (modalCount === 1) {
+                    document.body.classList.add('no-scroll');
+                }
             });
 
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    modal.classList.remove('is-open');
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+                modalCount--;
+                if (modalCount === 0) {
                     document.body.classList.remove('no-scroll');
-                });
+                }
+            };
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
             }
 
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    modal.classList.remove('is-open');
-                    document.body.classList.remove('no-scroll');
+                    closeModal();
                 }
             });
         } else {
