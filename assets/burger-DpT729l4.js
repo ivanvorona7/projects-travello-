@@ -1,0 +1,1 @@
+document.addEventListener(`DOMContentLoaded`,()=>{let e=document.getElementById(`burger`),t=document.querySelector(`.nav-list`);!e||!t||(e.addEventListener(`click`,()=>{t.classList.toggle(`active`),e.classList.toggle(`is-open`)}),document.querySelectorAll(`.nav-link`).forEach(n=>{n.addEventListener(`click`,()=>{t.classList.remove(`active`),e.classList.remove(`is-open`)})}))});
