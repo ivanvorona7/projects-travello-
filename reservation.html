@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронювання - Travello</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reservation.css">
+</head>
+
+<body>
+
+    <load ="partials/header.html" />
+
+    <main class="reservation-page">
+        <div class="container reservation-container">
+    
+            <div class="reservation-form-block">
+                <h1 class="form-title">Оплата замовлення</h1>
+                <p class="form-subtitle">Будь ласка, введіть ваші платіжні дані для завершення покупки</p>
+    
+                <form id="payment-form" class="main-res-form" novalidate>
+                    <div class="res-input-group">
+                        <label for="card-holder">Ім'я на картці</label>
+                        <input type="text" id="card-holder" placeholder="IVAN VORONA" required>
+                        <span class="error-message" id="err-holder"></span>
+                    </div>
+    
+                    <div class="res-input-group">
+                        <label for="card-number">Номер картки</label>
+                        <input type="text" id="card-number" placeholder="4444 4444 4444 4444" maxlength="19" required>
+                        <span class="error-message" id="err-number"></span>
+                    </div>
+    
+                    <div class="card-row-inputs">
+                        <div class="res-input-group">
+                            <label for="card-expiry">Термін дії</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                            <span class="error-message" id="err-expiry"></span>
+                        </div>
+                        <div class="res-input-group">
+                            <label for="card-cvv">CVV / CVC код</label>
+                            <input type="password" id="card-cvv" placeholder="***" maxlength="3" required>
+                            <span class="error-message" id="err-cvv"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="reservation-summary-card">
+                <div class="summary-card-inner">
+                    <h3 class="summary-title">Ваш рахунок:</h3>
+    
+                    <div class="summary-item" id="summary-ticket-block">
+                        <span class="item-label">✈️ Авіаквиток:</span>
+                        <span id="sum-ticket-price" class="item-value">0 грн</span>
+                    </div>
+    
+                    <div class="summary-item hidden" id="summary-hotel-block">
+                        <span class="item-label">🏨 Готель:</span>
+                        <span id="sum-hotel-price" class="item-value">0 грн</span>
+                    </div>
+    
+                    <hr class="summary-divider">
+    
+                    <div class="summary-item total-row">
+                        <span class="item-label">Разом до сплати:</span>
+                        <span id="sum-total-price" class="total-price">0 грн</span>
+                    </div>
+    
+                    <button type="submit" form="payment-form" class="btn-submit-booking">Оплатити тур</button>
+                </div>
+            </div>
+    
+        </div>
+    </main>
+    
+    <script type="module" src="./js/burger.js"></script>
+    <script type="module" src="./js/reservation.js"></script>
+    </body>
+    
+    </html>
+
+    <load ="partials/footer.html" />
+
+    <script type="module" src="./js/burger.js"></script>
+    <script type="module" src="./js/reservation.js"></script>
+    <script type="module" src="./js/hero.js"></script>
+    <script type="module" src="./js/footer.js"></script>
+</body>
+
+</html>

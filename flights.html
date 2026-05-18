@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авіарейси - Travello</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/flights.css">
+</head>
+
+<body>
+
+    <load ="partials/header.html" />
+
+    <main class="flights-page">
+        <div class="container">
+
+            <div class="flights-container">
+                <div class="flights-steps">
+                    <p class="steps-subtitle">Легко та швидко</p>
+                    <h1 class="steps-title">Забронюйте наступну подорож за 3 прості кроки</h1>
+
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-icon-box yellow-bg">
+                                <span class="step-emoji">🧭</span>
+                            </div>
+                            <div class="step-text">
+                                <h3>Виберіть напрямок</h3>
+                                <p>Знайдіть ідеальне місце для вашого відпочинку серед сотень доступних авіамаршрутів по
+                                    всьому світу.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-icon-box orange-bg">
+                                <span class="step-emoji">💳</span>
+                            </div>
+                            <div class="step-text">
+                                <h3>Здійсніть оплату</h3>
+                                <p>Безпечна та миттєва оплата квитків за допомогою сучасних платіжних систем у кілька
+                                    кліків.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-icon-box blue-bg">
+                                <span class="step-emoji">✈️</span>
+                            </div>
+                            <div class="step-text">
+                                <h3>Прибувайте в аеропорт</h3>
+                                <p>Отримайте електронні квитки та вирушайте в незабутню подорож у вибрану дату вильоту.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flights-visuals">
+                    <div class="main-trip-card">
+                        <div class="trip-img-box">
+                            <img src="https://picsum.photos/id/1015/400/250" alt="Греція">
+                        </div>
+                        <div class="trip-card-content">
+                            <h3>Подорож до Греції</h3>
+                            <p class="trip-details-text">14-29 червня | від Роббіна Джозефа</p>
+
+                            <div class="trip-action-icons">
+                                <span class="action-icon">🍃</span>
+                                <span class="action-icon">🗺️</span>
+                                <span class="action-icon">✈️</span>
+                            </div>
+
+                            <div class="trip-card-footer">
+                                <span class="footer-icon">🏢</span>
+                                <span class="footer-stats">24 людини летять</span>
+                                <button class="heart-btn">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ongoing-widget-card">
+                        <div class="widget-header">
+                            <div class="widget-avatar">
+                                <img src="https://picsum.photos/id/1043/50/50" alt="Рим">
+                            </div>
+                            <div class="widget-header-info">
+                                <p class="widget-tag">У процесі</p>
+                                <h4>Подорож до Риму</h4>
+                            </div>
+                        </div>
+                        <div class="widget-progress-section">
+                            <p class="progress-label">Завершено на <span>40%</span></p>
+                            <div class="widget-progress-bar">
+                                <div class="widget-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flight-search-section">
+                <div class="search-header">
+                    <h2>Швидкий пошук авіаквитків</h2>
+                    <p>Вкажіть маршрут, щоб підібрати найкращі варіанти перельотів</p>
+                </div>
+
+                <form id="flight-search-form" class="search-form" novalidate>
+                    <div class="search-input-group">
+                        <label for="from-city">Звідки:</label>
+                        <input type="text" id="from-city" placeholder="Наприклад, Київ">
+                        <span class="error-message" id="error-from"></span>
+                    </div>
+
+                    <div class="search-input-group">
+                        <label for="to-city">Куди:</label>
+                        <input type="text" id="to-city" placeholder="Наприклад, Рим">
+                        <span class="error-message" id="error-to"></span>
+                    </div>
+
+                    <div class="search-input-group">
+                        <label for="flight-date">Дата вильоту:</label>
+                        <input type="date" id="flight-date">
+                        <span class="error-message" id="error-date"></span>
+                    </div>
+
+                    <button type="submit" class="btn-search-flights">Знайти рейси</button>
+                </form>
+
+                <div id="flights-results-container" class="flights-results hidden">
+                    <h3 class="results-title">Доступні рейси за вашим запитом:</h3>
+                    <div class="flights-list" id="flights-list-output"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="hotel-offer-modal" class="modal-overlay hotel-modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-icon">🏨</div>
+            <h2>Бажаєте підібрати готель?</h2>
+            <p>Ми можемо автоматично знайти найкращі варіанти проживання під ваш рейс зі знижкою.</p>
+            <div class="modal-buttons-row">
+                <button type="button" id="btn-offer-yes" class="btn-offer-yes">Так, обов'язково</button>
+                <button type="button" id="btn-offer-no" class="btn-offer-no">Ні, тільки квиток</button>
+            </div>
+        </div>
+    </div>
+
+    <load ="partials/footer.html" />
+
+    <script src="./js/burger.js"></script>
+    <script src="./js/flights.js"></script>
+    <script type="module" src="./js/hero.js"></script>
+    <script type="module" src="./js/footer.js"></script>
+</body>
+
+</html>
