@@ -4,20 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travello — Головна</title>
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Volkhov:wght@400;700&display=swap"
-        rel="stylesheet">
-  <script type="module" crossorigin src="/projects-travello-/assets/footer-CgmmPW7v.js"></script>
-  <script type="module" crossorigin src="/projects-travello-/assets/burger-DpT729l4.js"></script>
+    <title>Бронювання - Travello</title>
+  <script type="module" crossorigin src="/projects-travello-/assets/reservation-6Spa50cW.js"></script>
+  <link rel="modulepreload" crossorigin href="/projects-travello-/assets/footer-CgmmPW7v.js">
+  <link rel="modulepreload" crossorigin href="/projects-travello-/assets/burger-DpT729l4.js">
   <link rel="stylesheet" crossorigin href="/projects-travello-/assets/footer-CPQCBY5M.css">
+  <link rel="stylesheet" crossorigin href="/projects-travello-/assets/reservation-DAOAprid.css">
 </head>
 
 <body>
+
     <header class="header">
     <div class="container">
         <nav class="nav">
@@ -48,43 +44,72 @@
     </div>
 </header>
 
-    <main>
-        <section class="hero">
-    <div class="container hero-container">
-        <div class="hero-content">
-            <p class="hero-subtitle">Найкращі напрямки по всьому світу</p>
-            <h1 class="hero-title">
-                Подорожуйте, <span class="accent">насолоджуйтесь</span> і живіть новим, повноцінним життям
-            </h1>
-            <p class="hero-text">
-                Мистецтво подорожувати — це не просто відвідування нових місць, а вміння насолоджуватися кожною хвилиною. Відкривайте
-                для себе світ, слухайте дивовижні історії та знаходьте натхнення у кожній поїздці разом з нами.
-            </p>
-            <div class="hero-actions">
-                <button class="btn-more">Дізнайтеся більше</button>
+    <main class="reservation-page">
+        <div class="container reservation-container">
+    
+            <div class="reservation-form-block">
+                <h1 class="form-title">Оплата замовлення</h1>
+                <p class="form-subtitle">Будь ласка, введіть ваші платіжні дані для завершення покупки</p>
+    
+                <form id="payment-form" class="main-res-form" novalidate>
+                    <div class="res-input-group">
+                        <label for="card-holder">Ім'я на картці</label>
+                        <input type="text" id="card-holder" placeholder="IVAN VORONA" required>
+                        <span class="error-message" id="err-holder"></span>
+                    </div>
+    
+                    <div class="res-input-group">
+                        <label for="card-number">Номер картки</label>
+                        <input type="text" id="card-number" placeholder="4444 4444 4444 4444" maxlength="19" required>
+                        <span class="error-message" id="err-number"></span>
+                    </div>
+    
+                    <div class="card-row-inputs">
+                        <div class="res-input-group">
+                            <label for="card-expiry">Термін дії</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                            <span class="error-message" id="err-expiry"></span>
+                        </div>
+                        <div class="res-input-group">
+                            <label for="card-cvv">CVV / CVC код</label>
+                            <input type="password" id="card-cvv" placeholder="***" maxlength="3" required>
+                            <span class="error-message" id="err-cvv"></span>
+                        </div>
+                    </div>
+                </form>
             </div>
+    
+            <div class="reservation-summary-card">
+                <div class="summary-card-inner">
+                    <h3 class="summary-title">Ваш рахунок:</h3>
+    
+                    <div class="summary-item" id="summary-ticket-block">
+                        <span class="item-label">✈️ Авіаквиток:</span>
+                        <span id="sum-ticket-price" class="item-value">0 грн</span>
+                    </div>
+    
+                    <div class="summary-item hidden" id="summary-hotel-block">
+                        <span class="item-label">🏨 Готель:</span>
+                        <span id="sum-hotel-price" class="item-value">0 грн</span>
+                    </div>
+    
+                    <hr class="summary-divider">
+    
+                    <div class="summary-item total-row">
+                        <span class="item-label">Разом до сплати:</span>
+                        <span id="sum-total-price" class="total-price">0 грн</span>
+                    </div>
+    
+                    <button type="submit" form="payment-form" class="btn-submit-booking">Оплатити тур</button>
+                </div>
+            </div>
+    
         </div>
-        <div class="hero-image">
-            <img src="/projects-travello-/assets/hero-girl-BSn1OjnI.png" alt="Traveler girl">
-        </div>
-    </div>
-</section>
-<div class="modal-overlay" id="companyModal">
-    <div class="modal-content">
-        <button class="modal-close" id="closeModal">&times;</button>
-        <h2 class="modal-title">Про Travello</h2>
-        <div class="modal-body">
-            <p><strong>Travello</strong> — це не просто сервіс бронювання, це ваш персональний провідник у світ
-                незабутніх вражень. Ми віримо, що подорожі змінюють людей, а люди змінюють світ.</p>
-            <p>Заснована групою ентузіастів у 2024 році, наша компанія ставить собі за мету зробити планування відпустки
-                таким же приємним, як і саму поїздку. Ми співпрацюємо з локальними гідами та найкращими готелями, щоб ви
-                відчули автентичність кожного куточка планети.</p>
-            <p>З нами ви отримуєте цілодобову підтримку, перевірені маршрути та гарантію найкращих спогадів.</p>
-        </div>
-    </div>
-</div>
-
     </main>
+    
+    </body>
+    
+    </html>
 
     <footer class="footer">
     <div class="container footer-container">
@@ -179,7 +204,7 @@
     </div>
 </div>
 </footer>
-
+
 </body>
 
 </html>

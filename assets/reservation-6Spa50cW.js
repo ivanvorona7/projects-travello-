@@ -1,0 +1,21 @@
+import"./footer-CgmmPW7v.js";import"./burger-DpT729l4.js";document.addEventListener(`DOMContentLoaded`,()=>{let e=JSON.parse(localStorage.getItem(`selectedTicket`)),t=JSON.parse(localStorage.getItem(`selectedHotelData`)),n=0,r=0;if(e){n=parseInt(e.price.replace(/\D/g,``))*40;let t=document.getElementById(`sum-ticket-price`);t&&(t.textContent=`${n} грн`)}if(t){r=4500;let e=document.getElementById(`summary-hotel-block`),t=document.getElementById(`sum-hotel-price`);e&&e.classList.remove(`hidden`),t&&(t.textContent=`${r} грн`)}let i=n+r,a=document.getElementById(`sum-total-price`);a&&(a.textContent=`${i} грн`);let o=document.querySelector(`.btn-submit-booking`);o&&o.addEventListener(`click`,e=>{e.preventDefault();let t=document.getElementById(`card-holder`),n=document.getElementById(`card-number`),r=document.getElementById(`card-expiry`),i=document.getElementById(`card-cvv`),a=!0;if(document.querySelectorAll(`.error-message`).forEach(e=>e.textContent=``),[t,n,r,i].forEach(e=>{e&&e.classList.remove(`input-error`)}),t&&!t.value.trim()){let e=document.getElementById(`err-holder`);e&&(e.textContent=`Введіть ім'я власника картки`),t.classList.add(`input-error`),a=!1}if(n&&n.value.replace(/\s/g,``).length<16){let e=document.getElementById(`err-number`);e&&(e.textContent=`Невірний номер картки (має бути 16 цифр)`),n.classList.add(`input-error`),a=!1}if(r&&!r.value.includes(`/`)){let e=document.getElementById(`err-expiry`);e&&(e.textContent=`Вкажіть формат MM/YY`),r.classList.add(`input-error`),a=!1}if(i&&i.value.length<3){let e=document.getElementById(`err-cvv`);e&&(e.textContent=`Введіть 3-значний код безпеки`),i.classList.add(`input-error`),a=!1}if(a){if(console.log(`Форма валідна! Створюємо динамічне вікно...`),document.getElementById(`dynamic-success-modal`))return;let e=document.createElement(`div`);e.id=`dynamic-success-modal`,e.style.cssText=`
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 100vw !important;
+                    height: 100vh !important;
+                    background: rgba(15, 23, 42, 0.85) !important;
+                    backdrop-filter: blur(12px) !important;
+                    -webkit-backdrop-filter: blur(12px) !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    z-index: 99999999 !important;
+                `,e.innerHTML=`
+                    <div style="background: #ffffff !important; padding: 45px 35px !important; border-radius: 28px !important; text-align: center !important; max-width: 450px !important; width: 90% !important; box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.5) !important; box-sizing: border-box !important;">
+                        <div style="font-size: 65px !important; margin-bottom: 20px !important; line-height: 1 !important;">✅</div>
+                        <h2 style="font-size: 28px !important; color: #1e1b4b !important; margin: 0 0 12px 0 !important; font-weight: 700 !important; font-family: sans-serif !important;">Оплата успішно пройшла!</h2>
+                        <p style="font-size: 15px !important; color: #64748b !important; line-height: 1.6 !important; margin: 0 0 30px 0 !important; font-family: sans-serif !important;">Дякуємо! Квитки та ваучери вже надіслані на вашу електронну пошту. Приємної подорожі!</p>
+                        <button type="button" id="btn-dynamic-home" style="display: inline-block !important; width: 100% !important; max-width: 220px !important; padding: 14px 24px !important; background-color: #22c55e !important; color: #ffffff !important; border: none !important; border-radius: 12px !important; font-size: 16px !important; font-weight: 600 !important; cursor: pointer !important; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3) !important;">На головну</button>
+                    </div>
+                `,document.body.appendChild(e),console.log(`Динамічне вікно успішно прикріплено до body!`);let t=document.getElementById(`btn-dynamic-home`);t&&t.addEventListener(`click`,e=>{e.preventDefault(),localStorage.clear(),window.location.href=`./index.html`})}})});
